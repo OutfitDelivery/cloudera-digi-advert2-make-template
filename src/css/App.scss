@@ -57,18 +57,13 @@ h3 {
 
 .placeholder{display: none}
 
-/*
+//Comment the code out to see all of the digi advert text elements as you build.
 .text-el{
   visibility: hidden;
 }
 
 [data-text-type="subheadline"] .subheadline.text-el,
-[data-text-type="heading-1"] .headline.line-1.text-el,
-[data-text-type="heading-2"] .headline.line-2.text-el,
-[data-text-type="heading-3"] .headline.line-3.text-el,
-[data-text-type="heading-4"] .headline.line-4.text-el,
-[data-text-type="heading-5"] .headline.line-5.text-el,
-[data-text-type="display-line"] .display-line.text-el,
+[data-text-type="headline"] .headline.text-el,
 [data-text-type="call-to-action"] .call-to-action.text-el{
   visibility: visible;
-}*/
+}
