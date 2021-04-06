@@ -17,8 +17,8 @@ function App({
 
     //Checks to see if text has content and adds breaks if [break] exists
     function conditionalTextCheck(text, classList){
-      /*classList += " text-el";
-      let textChild = text.props.children;
+      classList += " text-el";
+      /*let textChild = text.props.children;
       try{textChild = textChild.props.children} catch(e){}
 
       if(textChild === "" || textChild === "null") return "";
@@ -75,7 +75,7 @@ App.defaultProps = {
   width:2400,
   height:1260, 
   contentType: "headline", 
-  subheadline: "", 
+  subheadline: "TEST", 
   headline: "How to drive machine[break]platform that lets you", 
   headlineSize: "1",
   callToAction: "Watch",
