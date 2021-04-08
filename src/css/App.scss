@@ -35,7 +35,6 @@ h1,
   line-height: 1;
 }
 
-
 h2 {
   font-family: "Neue Plak Text Semi Bold";
   text-transform: uppercase;
@@ -55,15 +54,58 @@ h3 {
   border: 0.2rem dashed red;
 }
 
-.placeholder{display: none}
+.placeholder{display: block}
 
 //Comment the code out to see all of the digi advert text elements as you build.
 .text-el{
   visibility: hidden;
 }
 
+.text-area {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  flex-direction: column;
+}
+
 [data-text-type="subheadline"] .subheadline.text-el,
 [data-text-type="headline"] .headline.text-el,
 [data-text-type="call-to-action"] .call-to-action.text-el{
   visibility: visible;
+}
+
+[data-text-type="subheadline"] .subheadline.text-el h2 {
+  font-family: "Neue Plak Text Light";
+  text-transform: none;
+}
+[data-text-type="headline"] .headline.text-el h1 {
+  font-family: "Neue Plak Extended";
+  text-transform: none;
+}
+
+[data-width="600"][data-height="315"] {
+  .text-area {
+    padding: 489px 96px 103px;
+  }
+  [data-text-type="subheadline"] .subheadline.text-el h2 {
+    font-size:1.43rem;
+    font-weight: bold;
+    letter-spacing: 0.008rem;
+    color: $white;
+  }
+  [data-text-type="subheadline"] .subheadline.text-el h2 strong {
+    font-family: "Neue Plak Text";
+  }
+  [data-text-type="headline"] .headline {
+    margin-top: 55px;
+  }
+  [data-text-type="headline"] .headline.text-el h1 {
+    font-size:1.8rem;
+    line-height: 1.86rem;
+    font-weight: bold;
+    letter-spacing: 0.095rem;
+    color: $white;
+  }
 }

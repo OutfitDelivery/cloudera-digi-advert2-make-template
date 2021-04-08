@@ -2,35 +2,32 @@ import React from "react";
 import PropTypes from "prop-types";
 import "./css/App.scss";
 
-
 function App({
   width, height, contentType, subheadline, headline, headlineSize, callToAction}) {
     
+    const placeholderBkg = {
+      backgroundImage: `url(https://cdn.jsdelivr.net/gh/OutfitDelivery/cloudera-digi-advert2-make-template@master/src/assets/Placeholder/${width/4}x${height/4}.png)`,
+    };
+
     const appStyle = {
       width: `${width}px`,
       height: `${height}px`,
     };
 
-    const placeholderBkg = {
-      backgroundImage: `url(https://cdn.jsdelivr.net/gh/OutfitDelivery/cloudera-digi-advert1-make-template@master/src/assets/Placeholder/${width/4}x${height/4}.png)`,
-    };
+    const formatTags = (text) => {
+      /* [break] */
+      let formatAll = (text)=>{
+        var bold_regex = /\[bold\](.*?)\[\/bold\]/gi;
+        text = text.replaceAll(bold_regex, "<strong>$1</strong>");
+        text = text.replaceAll("[break]", "<br/>");
+        return {__html: text}
+      }
+      return <div dangerouslySetInnerHTML={ formatAll(text) }></div>;
+    }
 
     //Checks to see if text has content and adds breaks if [break] exists
     function conditionalTextCheck(text, classList){
       classList += " text-el";
-      /*let textChild = text.props.children;
-      try{textChild = textChild.props.children} catch(e){}
-
-      if(textChild === "" || textChild === "null") return "";
-
-      //Update [break] to <br>
-      textChild = textChild.split("[break]").join("<br>");
-      if((text.props.children).props === undefined){
-        text.props.children = textChild;
-      } else{
-        (text.props.children).props.children = textChild;
-      }
-      */
       return <div className={classList}>{text}</div>;
     }
 
@@ -50,8 +47,8 @@ function App({
       <div className="App" style={appStyle} data-width={width/4} data-height={height/4}>
             <div className="placeholder" style={placeholderBkg}></div>
             <div className="text-area" data-text-type={contentType} ref={el=>maxHeight(el)}>
-              {conditionalTextCheck(<h2>{subheadline}</h2>, "subheadline")}
-              {conditionalTextCheck(<h1><span>{headline}</span></h1>, "headline")}
+              {conditionalTextCheck(<h2>{ formatTags(subheadline) }</h2>, "subheadline")}
+              {conditionalTextCheck(<h1><span>{ formatTags(headline) }</span></h1>, "headline")}
               {conditionalTextCheck(<p>{callToAction}</p>, "call-to-action")}
           </div>
       </div>
@@ -74,11 +71,11 @@ App.propTypes = {
 App.defaultProps = {
   width:2400,
   height:1260, 
-  contentType: "subheadline", 
-  subheadline: "TEST SUBHEADLINE", 
-  headline: "How to drive machine[break]platform that lets you", 
+  contentType: "call-to-action", 
+  subheadline: "Forrester study", 
+  headline: "USE REAL-TIME STREAMING[break]DATA TO MAKE CRITICAL[break]BUSINESS DECISIONS", 
   headlineSize: "1",
-  callToAction: "Watch",
+  callToAction: "READ NOW",
 };
 
 
