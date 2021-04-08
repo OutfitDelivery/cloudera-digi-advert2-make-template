@@ -74,8 +74,8 @@ App.propTypes = {
 App.defaultProps = {
   width:2400,
   height:1260, 
-  contentType: "headline", 
-  subheadline: "TEST", 
+  contentType: "subheadline", 
+  subheadline: "TEST SUBHEADLINE", 
   headline: "How to drive machine[break]platform that lets you", 
   headlineSize: "1",
   callToAction: "Watch",
