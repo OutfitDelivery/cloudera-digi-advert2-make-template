@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import "./css/App.scss";
 
 function App({
-  width, height, contentType, subheadline, headline, headlineSize, callToAction}) {
+  width, height, contentType, subheadline, headline, headlineSize, callToAction, logoLockUp, logoLockUpSize}) {
     
     const placeholderBkg = {
       backgroundImage: `url(https://cdn.jsdelivr.net/gh/OutfitDelivery/cloudera-digi-advert2-make-template@master/src/assets/Placeholder/${width/4}x${height/4}.png)`,
@@ -47,9 +47,10 @@ function App({
       <div className="App" style={appStyle} data-width={width/4} data-height={height/4}>
             <div className="placeholder" style={placeholderBkg}></div>
             <div className="text-area" data-text-type={contentType} ref={el=>maxHeight(el)}>
+              {conditionalTextCheck(<div>{ formatTags(logoLockUp) }</div>, "logoLockUp")}
               {conditionalTextCheck(<h2>{ formatTags(subheadline) }</h2>, "subheadline")}
               {conditionalTextCheck(<h1><span>{ formatTags(headline) }</span></h1>, "headline")}
-              {conditionalTextCheck(<p>{callToAction}</p>, "call-to-action")}
+              {conditionalTextCheck(<div><span>{callToAction}</span></div>, "call-to-action")}
           </div>
       </div>
       </div>
@@ -64,18 +65,22 @@ App.propTypes = {
   contentType: PropTypes.string, 
   subheadline: PropTypes.string, 
   headline: PropTypes.string, 
-  headlineSize: PropTypes.string,
+  headlineSize: PropTypes.number,
   callToAction: PropTypes.string,
+  logoLockUp: PropTypes.string,
+  logoLockUpSize: PropTypes.number
 };
 
 App.defaultProps = {
   width:2400,
   height:1260, 
-  contentType: "call-to-action", 
+  contentType: "logoLockUp", 
   subheadline: "Forrester study", 
   headline: "USE REAL-TIME STREAMING[break]DATA TO MAKE CRITICAL[break]BUSINESS DECISIONS", 
-  headlineSize: "1",
+  headlineSize: 100,
   callToAction: "READ NOW",
+  logoLockUp: "On Demand",
+  logoLockUpSize: 100
 };
 
 
