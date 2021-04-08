@@ -74,7 +74,7 @@ App.propTypes = {
 App.defaultProps = {
   width:2400,
   height:1260, 
-  contentType: "logoLockUp", 
+  contentType: "subheadline", 
   subheadline: "Forrester study", 
   headline: "USE REAL-TIME STREAMING[break]DATA TO MAKE CRITICAL[break]BUSINESS DECISIONS", 
   headlineSize: 100,

@@ -54,7 +54,7 @@ h3 {
   border: 0.2rem dashed red;
 }
 
-.placeholder{display: none}
+.placeholder{display: block }
 
 //Comment the code out to see all of the digi advert text elements as you build.
 .text-el{
@@ -90,7 +90,7 @@ h3 {
   display: flex;
   flex-direction: row;
 }
-[data-text-type="logoLockUp"] .logoLockUp {
+.logoLockUp {
   position: absolute;
   font-family: "Neue Plak Extended";
   text-transform: none;
