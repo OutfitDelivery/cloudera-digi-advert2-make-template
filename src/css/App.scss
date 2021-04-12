@@ -54,12 +54,12 @@ h3 {
   border: 0.2rem dashed red;
 }
 
-.placeholder{display: block; }
+.placeholder{display: none; }
 
 //Comment the code out to see all of the digi advert text elements as you build.
-// .text-el{
-//   visibility: hidden;
-// }
+.text-el{
+  visibility: hidden;
+}
 
 .text-area {
   position: relative;
