@@ -22,7 +22,7 @@ function App({
         var bold_regex = /\[bold\](.*?)\[\/bold\]/gi;
         text = text.replaceAll(bold_regex, "<strong>$1</strong>");
         text = text.replaceAll("[break]", "<br/>");
-        text += callToAction;
+        text += logoLockUp;
         return {__html: text}
       }
       return <div dangerouslySetInnerHTML={ formatAll(text) }></div>;
@@ -80,7 +80,7 @@ App.propTypes = {
 App.defaultProps = {
   width:2400,
   height:1260, 
-  contentType: "logoLockUp", 
+  contentType: "headline", 
   subheadline: "Forrester study", 
   headline: "USE REAL-TIME STREAMING[break]DATA TO MAKE CRITICAL[break]BUSINESS DECISIONS", 
   headlineSize: 100,
