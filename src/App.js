@@ -69,11 +69,11 @@ App.propTypes = {
   contentType: PropTypes.string, 
   subheadline: PropTypes.string, 
   headline: PropTypes.string, 
-  headlineSize: PropTypes.number,
+  headlineSize: PropTypes.string,
   callToAction: PropTypes.string,
   logoLockUp: PropTypes.string,
-  logoLockUpSize: PropTypes.number,
-  featureImageExist: PropTypes.bool
+  logoLockUpSize: PropTypes.string,
+  featureImageExist: PropTypes.string
 };
 
 App.defaultProps = {
