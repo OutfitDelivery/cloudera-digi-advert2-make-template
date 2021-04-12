@@ -54,12 +54,12 @@ h3 {
   border: 0.2rem dashed red;
 }
 
-.placeholder{display: none; }
+.placeholder{display: block; }
 
 //Comment the code out to see all of the digi advert text elements as you build.
-.text-el{
-  visibility: hidden;
-}
+// .text-el{
+//   visibility: hidden;
+// }
 
 .text-area {
   position: relative;
@@ -141,7 +141,7 @@ h3 {
   }
   .headline h1 {
     font-size: calc(1.8rem * (var(--headline-size)/100));
-    line-height: calc(1.8rem * (var(--headline-size)/100));
+    line-height: calc(1.88rem * (var(--headline-size)/100));
     font-weight: bold;
     letter-spacing: calc(0.095rem * (var(--headline-size)/100));
     color: $white;
@@ -168,5 +168,56 @@ h3 {
     min-height: 201px;
     max-height: 201px;
     padding-bottom: 18px;
+  }
+}
+
+[data-width="300"][data-height="600"] {
+  .text-area {
+    padding: 0px 103px;
+    margin-top: 635px;
+    padding-right: 70px;
+  }
+  .text-area[data-feature-image-exist="true"] {
+    margin-top: 325px;
+  }
+  .subheadline h2 {
+    font-size:1.07rem;
+    font-weight: bold;
+    letter-spacing: -0.005rem;
+    color: $white;
+  }
+  .headline {
+    margin-top: 22px;
+  }
+  .headline h1 {
+    font-size: calc(1.45rem * (var(--headline-size)/100));
+    line-height: calc(1.55rem * (var(--headline-size)/100));
+    font-weight: bold;
+    letter-spacing: calc(0.095rem * (var(--headline-size)/100));
+    color: $white;
+  }
+  .call-to-action {
+    margin-top: 58px;
+  }
+  .call-to-action div {
+    border-radius: 58px;
+    padding: 27px 72px;
+    padding-bottom: 33px;
+  }
+  .call-to-action div span {
+    font-size:0.75rem;
+    letter-spacing: 0.15rem;
+    line-height: 0.75rem;
+  }
+  .logoLockUp {
+    flex-direction: reverse;
+    align-items: flex-end;
+    padding: 0px 104px;
+    font-size: calc(1.365rem * (var(--logo-lockup-size)/100));
+    line-height: calc(1.365rem * (var(--logo-lockup-size)/100));
+    height: 301px;
+    min-height: 301px;
+    max-height: 301px;
+    padding-bottom: 68px;
   }
 }
