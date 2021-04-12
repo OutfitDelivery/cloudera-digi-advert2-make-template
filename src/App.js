@@ -45,7 +45,7 @@ function App({
 
     var htmlStructure = (
 
-<div>
+    <div>
       <div className="App" style={appStyle} data-width={width/4} data-height={height/4} >
             <div className="placeholder" style={placeholderBkg}></div>
             <div className="header-area">
@@ -55,8 +55,8 @@ function App({
               {conditionalTextCheck(<h2>{ formatTags(subheadline) }</h2>, "subheadline")}
               {conditionalTextCheck(<h1><span>{ formatTags(headline) }</span></h1>, "headline")}
               {conditionalTextCheck(<div><span>{callToAction}</span></div>, "call-to-action")}
-          </div>
-      </div>
+            </div>
+        </div>
       </div>
     );
   
