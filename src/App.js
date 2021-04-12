@@ -12,8 +12,8 @@ function App({
     const appStyle = {
       width: `${width}px`,
       height: `${height}px`,
-      '--headline-size': headlineSize,
-      '--logo-lockup-size': logoLockUpSize,
+      '--headline-size': `${headlineSize}`,
+      '--logo-lockup-size': `${logoLockUpSize}`,
     };
 
     const formatTags = (text) => {
@@ -22,7 +22,6 @@ function App({
         var bold_regex = /\[bold\](.*?)\[\/bold\]/gi;
         text = text.replaceAll(bold_regex, "<strong>$1</strong>");
         text = text.replaceAll("[break]", "<br/>");
-        text += featureImageExist;
         return {__html: text}
       }
       return <div dangerouslySetInnerHTML={ formatAll(text) }></div>;
@@ -85,11 +84,11 @@ App.defaultProps = {
   contentType: "logoLockUp", 
   subheadline: "Forrester study", 
   headline: "USE REAL-TIME STREAMING[break]DATA TO MAKE CRITICAL[break]BUSINESS DECISIONS", 
-  headlineSize: 100,
+  headlineSize: "100",
   callToAction: "READ NOW",
   logoLockUp: "On Demand",
-  logoLockUpSize: 100,
-  featureImageExist: false
+  logoLockUpSize: "100",
+  featureImageExist: true
 };
 
 
