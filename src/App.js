@@ -22,7 +22,6 @@ function App({
         var bold_regex = /\[bold\](.*?)\[\/bold\]/gi;
         text = text.replaceAll(bold_regex, "<strong>$1</strong>");
         text = text.replaceAll("[break]", "<br/>");
-        text += logoLockUp;
         return {__html: text}
       }
       return <div dangerouslySetInnerHTML={ formatAll(text) }></div>;
@@ -49,13 +48,15 @@ function App({
     <div>
       <div className="App" style={appStyle} data-width={width/4} data-height={height/4} >
             <div className="placeholder" style={placeholderBkg}></div>
-            <div className="header-area">
-              {conditionalTextCheck(<div>{ formatTags(logoLockUp) }</div>, "logoLockUp")}
-            </div>
             <div className="text-area" data-text-type={contentType} data-feature-image-exist={featureImageExist} ref={el=>maxHeight(el)}>
-              {conditionalTextCheck(<h2>{ formatTags(subheadline) }</h2>, "subheadline")}
-              {conditionalTextCheck(<h1><span>{ formatTags(headline) }</span></h1>, "headline")}
-              {conditionalTextCheck(<div><span>{callToAction}</span></div>, "call-to-action")}
+              <div className="headerArea">
+                {conditionalTextCheck(<div>{ formatTags(logoLockUp) }</div>, "logoLockUp")}
+              </div>
+              <div className="contentArea">
+                {conditionalTextCheck(<h2>{ formatTags(subheadline) }</h2>, "subheadline")}
+                {conditionalTextCheck(<h1><span>{ formatTags(headline) }</span></h1>, "headline")}
+                {conditionalTextCheck(<div><span>{callToAction}</span></div>, "call-to-action")}
+              </div>
             </div>
         </div>
       </div>
@@ -78,16 +79,16 @@ App.propTypes = {
 };
 
 App.defaultProps = {
-  width:2400,
-  height:1260, 
-  contentType: "headline", 
+  width:1200,
+  height:2400, 
+  contentType: "logoLockUp", 
   subheadline: "Forrester study", 
   headline: "USE REAL-TIME STREAMING[break]DATA TO MAKE CRITICAL[break]BUSINESS DECISIONS", 
   headlineSize: 100,
   callToAction: "READ NOW",
   logoLockUp: "On Demand",
   logoLockUpSize: 100,
-  featureImageExist: true
+  featureImageExist: false
 };
 
 

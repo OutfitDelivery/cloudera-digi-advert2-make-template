@@ -106,12 +106,16 @@ h3 {
   font-weight: bold;
   color: $bright-orange;
 }
-.header-area {
+.headerArea {
   position: relative;
   width: 100%;
 }
+.contentArea {
+  position: relative;
+  flex: 1 1 0;
+}
 .logoLockUp {
-  position: absolute;
+  position: relative;
   font-family: "Neue Plak Extended";
   text-transform: none;
   top: 0px;
@@ -124,12 +128,11 @@ h3 {
 }
 
 [data-width="600"][data-height="315"] {
-  .text-area {
-    padding: 0px 96px;
-    margin-top: 489px;
+  .contentArea {
+    padding: 288px 400px 85px 97px;
   }
-  [data-feature-image-exist="true"] {
-    margin-top: 325px !important;
+  [data-feature-image-exist="true"] .contentArea {
+    padding: 85px 400px 85px 97px;
   }
   .subheadline h2 {
     font-size:1.43rem;
@@ -172,13 +175,15 @@ h3 {
 }
 
 [data-width="300"][data-height="600"] {
-  .text-area {
-    padding: 0px 103px;
-    margin-top: 635px;
-    padding-right: 70px;
+  .contentArea {
+    padding: 101px 70px 101px 101px;
+    flex: unset;
   }
-  [data-feature-image-exist="true"] {
-    margin-top: 635px;
+  [data-feature-image-exist="false"] {
+    justify-content: space-between;
+  }
+  [data-feature-image-exist="true"] .contentArea {
+    padding: 333px 70px 101px 101px;
   }
   .subheadline h2 {
     font-size:1.07rem;
