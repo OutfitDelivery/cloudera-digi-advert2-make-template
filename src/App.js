@@ -22,6 +22,7 @@ function App({
         var bold_regex = /\[bold\](.*?)\[\/bold\]/gi;
         text = text.replaceAll(bold_regex, "<strong>$1</strong>");
         text = text.replaceAll("[break]", "<br/>");
+        text += headlineSize;
         return {__html: text}
       }
       return <div dangerouslySetInnerHTML={ formatAll(text) }></div>;
@@ -77,16 +78,16 @@ App.propTypes = {
 };
 
 App.defaultProps = {
-  width:1200,
-  height:2400, 
+  width:2400,
+  height:1260, 
   contentType: "headline", 
   subheadline: "Forrester study", 
-  headline: "USE REAL-TIME[break]STREAMING DATA[break]TO MAKE CRITICAL[break]BUSINESS[break]DECISIONS", 
+  headline: "USE REAL-TIME STREAMING[break]DATA TO MAKE CRITICAL[break]BUSINESS DECISIONS", 
   headlineSize: 100,
   callToAction: "READ NOW",
   logoLockUp: "On Demand",
   logoLockUpSize: 100,
-  featureImageExist: false
+  featureImageExist: true
 };
 
 
