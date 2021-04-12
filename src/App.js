@@ -12,6 +12,8 @@ function App({
     const appStyle = {
       width: `${width}px`,
       height: `${height}px`,
+      '--headline-size': headlineSize,
+      '--logo-lockup-size': logoLockUpSize,
     };
 
     const formatTags = (text) => {
@@ -24,11 +26,6 @@ function App({
       }
       return <div dangerouslySetInnerHTML={ formatAll(text) }></div>;
     }
-
-    const rootFormat = {
-      '--headline-size': headlineSize,
-      '--logo-lockup-size': logoLockUpSize
-    };
 
     //Checks to see if text has content and adds breaks if [break] exists
     function conditionalTextCheck(text, classList){
@@ -48,7 +45,7 @@ function App({
 
     var htmlStructure = (
 
-<div style={rootFormat}>
+<div>
       <div className="App" style={appStyle} data-width={width/4} data-height={height/4} >
             <div className="placeholder" style={placeholderBkg}></div>
             <div className="header-area">
@@ -56,7 +53,7 @@ function App({
             </div>
             <div className="text-area" data-text-type={contentType} data-feature-image-exist={featureImageExist} ref={el=>maxHeight(el)}>
               {conditionalTextCheck(<h2>{ formatTags(subheadline) }</h2>, "subheadline")}
-              {conditionalTextCheck(<h1 data-headline-size={headlineSize}><span>{ formatTags(headline) }</span></h1>, "headline")}
+              {conditionalTextCheck(<h1><span>{ formatTags(headline) }</span></h1>, "headline")}
               {conditionalTextCheck(<div><span>{callToAction}</span></div>, "call-to-action")}
           </div>
       </div>
@@ -82,14 +79,14 @@ App.propTypes = {
 App.defaultProps = {
   width:2400,
   height:1260, 
-  contentType: "subheadline", 
+  contentType: "headline", 
   subheadline: "Forrester study", 
   headline: "USE REAL-TIME STREAMING[break]DATA TO MAKE CRITICAL[break]BUSINESS DECISIONS", 
   headlineSize: 100,
   callToAction: "READ NOW",
   logoLockUp: "On Demand",
   logoLockUpSize: 100,
-  featureImageExist: false
+  featureImageExist: true
 };
 
 
