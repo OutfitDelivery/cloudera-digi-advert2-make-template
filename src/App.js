@@ -19,7 +19,7 @@ function App({
     const formatTags = (text) => {
       /* [break] */
       let formatAll = (text)=>{
-        var bold_regex = /\[bold\](.*?)\[\/bold\]/gi;
+        var bold_regex = /\[bold\](.*?)\[bold\]/gi;
         text = text.replaceAll(bold_regex, "<strong>$1</strong>");
         text = text.replaceAll("[break]", "<br/>");
         return {__html: text}
@@ -83,7 +83,7 @@ App.defaultProps = {
   height:2400, 
   contentType: "logoLockUp", 
   subheadline: "Forrester study", 
-  headline: "USE REAL-TIME STREAMING[break]DATA TO MAKE CRITICAL[break]BUSINESS DECISIONS", 
+  headline: "USE REAL-TIME STREAMING DATA[break]TO MAKE CRITICAL[break]BUSINESS DECISIONS", 
   headlineSize: "100",
   callToAction: "READ NOW",
   logoLockUp: "On Demand",
