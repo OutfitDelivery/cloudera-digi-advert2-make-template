@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import "./css/App.scss";
 
 function App({
-  width, height, contentType, subheadline, headline, headlineSize, callToAction, logoLockUp, logoLockUpSize}) {
+  width, height, contentType, subheadline, headline, headlineSize, callToAction, logoLockUp, logoLockUpSize, featureImageExist}) {
     
     const placeholderBkg = {
       backgroundImage: `url(https://cdn.jsdelivr.net/gh/OutfitDelivery/cloudera-digi-advert2-make-template@master/src/assets/Placeholder/${width/4}x${height/4}.png)`,
@@ -44,7 +44,7 @@ function App({
     var htmlStructure = (
 
 <div data-headline-size={headlineSize}>
-      <div className="App" style={appStyle} data-width={width/4} data-height={height/4}>
+      <div className="App" style={appStyle} data-width={width/4} data-height={height/4} data-feature-image-exist={featureImageExist}>
             <div className="placeholder" style={placeholderBkg}></div>
             <div className="text-area" data-text-type={contentType} ref={el=>maxHeight(el)}>
               {conditionalTextCheck(<div>{ formatTags(logoLockUp) }</div>, "logoLockUp")}
@@ -68,7 +68,8 @@ App.propTypes = {
   headlineSize: PropTypes.number,
   callToAction: PropTypes.string,
   logoLockUp: PropTypes.string,
-  logoLockUpSize: PropTypes.number
+  logoLockUpSize: PropTypes.number,
+  featureImageExist: PropTypes.bool
 };
 
 App.defaultProps = {
@@ -80,7 +81,8 @@ App.defaultProps = {
   headlineSize: 100,
   callToAction: "READ NOW",
   logoLockUp: "On Demand",
-  logoLockUpSize: 100
+  logoLockUpSize: 100,
+  featureImageExist: false
 };
 
 
