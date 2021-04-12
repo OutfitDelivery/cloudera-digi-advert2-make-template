@@ -25,6 +25,11 @@ function App({
       return <div dangerouslySetInnerHTML={ formatAll(text) }></div>;
     }
 
+    const rootFormat = {
+      '--headline-size': headlineSize,
+      '--logo-lockup-size': logoLockUpSize
+    };
+
     //Checks to see if text has content and adds breaks if [break] exists
     function conditionalTextCheck(text, classList){
       classList += " text-el";
@@ -43,13 +48,15 @@ function App({
 
     var htmlStructure = (
 
-<div data-headline-size={headlineSize}>
-      <div className="App" style={appStyle} data-width={width/4} data-height={height/4} data-feature-image-exist={featureImageExist}>
+<div style={rootFormat}>
+      <div className="App" style={appStyle} data-width={width/4} data-height={height/4} >
             <div className="placeholder" style={placeholderBkg}></div>
-            <div className="text-area" data-text-type={contentType} ref={el=>maxHeight(el)}>
+            <div className="header-area">
               {conditionalTextCheck(<div>{ formatTags(logoLockUp) }</div>, "logoLockUp")}
+            </div>
+            <div className="text-area" data-text-type={contentType} data-feature-image-exist={featureImageExist} ref={el=>maxHeight(el)}>
               {conditionalTextCheck(<h2>{ formatTags(subheadline) }</h2>, "subheadline")}
-              {conditionalTextCheck(<h1><span>{ formatTags(headline) }</span></h1>, "headline")}
+              {conditionalTextCheck(<h1 data-headline-size={headlineSize}><span>{ formatTags(headline) }</span></h1>, "headline")}
               {conditionalTextCheck(<div><span>{callToAction}</span></div>, "call-to-action")}
           </div>
       </div>

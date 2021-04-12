@@ -54,7 +54,7 @@ h3 {
   border: 0.2rem dashed red;
 }
 
-.placeholder{display: block }
+.placeholder{display: none }
 
 //Comment the code out to see all of the digi advert text elements as you build.
 .text-el{
@@ -77,18 +77,37 @@ h3 {
   visibility: visible;
 }
 
-[data-text-type="subheadline"] .subheadline h2 {
+.subheadline h2 {
   font-family: "Neue Plak Text Light";
   text-transform: none;
 }
-[data-text-type="headline"] .headline h1 {
+.subheadline h2 strong {
+  font-family: "Neue Plak Text";
+}
+.headline h1 {
   font-family: "Neue Plak Extended";
   text-transform: none;
 }
-[data-text-type="call-to-action"] .call-to-action {
+.call-to-action {
   position: relative;
   display: flex;
   flex-direction: row;
+}
+.call-to-action div {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: $white;
+}
+.call-to-action div span {
+  font-weight: bold;
+  color: $bright-orange;
+}
+.header-area {
+  position: relative;
+  width: 100%;
 }
 .logoLockUp {
   position: absolute;
@@ -100,55 +119,54 @@ h3 {
   display: flex;
   flex-direction: row;
   color: $dark-grey;
+  align-items: center;
 }
 
 [data-width="600"][data-height="315"] {
   .text-area {
-    padding: 489px 96px 103px;
+    padding: 0px 96px;
+    margin-top: 489px;
   }
-  [data-text-type="subheadline"] .subheadline h2 {
+  .text-area[data-feature-image-exist="true"] {
+    margin-top: 325px;
+  }
+  .subheadline h2 {
     font-size:1.43rem;
     font-weight: bold;
     letter-spacing: 0.008rem;
     color: $white;
   }
-  [data-text-type="subheadline"] .subheadline h2 strong {
-    font-family: "Neue Plak Text";
+  .headline {
+    margin-top: 27px;
   }
-  [data-text-type="headline"] .headline {
-    margin-top: 55px;
-  }
-  [data-text-type="headline"] .headline h1 {
-    font-size:1.8rem;
-    line-height: 1.86rem;
+  .headline h1 {
+    font-size: calc(1.8rem * (var(--headline-size)/100));
+    line-height: calc(1.8rem * (var(--headline-size)/100));
     font-weight: bold;
-    letter-spacing: 0.095rem;
+    letter-spacing: calc(0.095rem * (var(--headline-size)/100));
     color: $white;
   }
-  [data-text-type="call-to-action"] .call-to-action {
-    margin-top: 301px;
+  .call-to-action {
+    margin-top: 82px;
   }
-  [data-text-type="call-to-action"] .call-to-action div {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  .call-to-action div {
     border-radius: 58px;
     padding: 27px 72px;
     padding-bottom: 33px;
-    background-color: $white;
   }
-  [data-text-type="call-to-action"] .call-to-action div span {
+  .call-to-action div span {
     font-size:0.75rem;
-    font-weight: bold;
     letter-spacing: 0.15rem;
-    color: $bright-orange;
     line-height: 0.75rem;
   }
-  [data-text-type="logoLockUp"] .logoLockUp {
+  .logoLockUp {
     flex-direction: row-reverse;
-    padding: 27px 107px;
-    font-size: 1.365rem;
+    padding: 0px 107px;
+    font-size: calc(1.365rem * (var(--logo-lockup-size)/100));
+    line-height: calc(1.365rem * (var(--logo-lockup-size)/100));
+    height: 201px;
+    min-height: 201px;
+    max-height: 201px;
+    padding-bottom: 18px;
   }
 }
