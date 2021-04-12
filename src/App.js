@@ -80,15 +80,15 @@ App.propTypes = {
 
 App.defaultProps = {
   width:1200,
-  height:2400, 
+  height:1000, 
   contentType: "logoLockUp", 
   subheadline: "Forrester study", 
-  headline: "USE REAL-TIME STREAMING DATA[break]TO MAKE CRITICAL[break]BUSINESS DECISIONS", 
+  headline: "USE REAL-TIME STREAMING[break]DATA TO MAKE CRITICAL[break]BUSINESS DECISIONS", 
   headlineSize: "100",
   callToAction: "READ NOW",
   logoLockUp: "On Demand",
   logoLockUpSize: "100",
-  featureImageExist: true
+  featureImageExist: false
 };
 
 

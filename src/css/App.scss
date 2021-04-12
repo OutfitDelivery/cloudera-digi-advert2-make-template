@@ -214,7 +214,6 @@ h3 {
     line-height: 0.75rem;
   }
   .logoLockUp {
-    flex-direction: reverse;
     align-items: flex-end;
     padding: 0px 104px;
     font-size: calc(1.365rem * (var(--logo-lockup-size)/100));
@@ -223,5 +222,52 @@ h3 {
     min-height: 301px;
     max-height: 301px;
     padding-bottom: 68px;
+  }
+}
+
+[data-width="300"][data-height="250"] {
+  .contentArea {
+    padding: 289px 51px 60px 84px;
+  }
+  [data-feature-image-exist="true"] .contentArea {
+    padding: 174px 51px 168px 84px;
+  }
+  .subheadline h2 {
+    font-family: "Neue Plak Text";
+    font-size: 1.1rem;
+    letter-spacing: 0.02rem;
+    color: $white;
+  }
+  .headline {
+    margin-top: 18px;
+  }
+  .headline h1 {
+    font-size: calc(1.1rem * (var(--headline-size)/100));
+    line-height: calc(1.13rem * (var(--headline-size)/100));
+    font-weight: bold;
+    letter-spacing: calc(0.02rem * (var(--headline-size)/100));
+    color: $white;
+  }
+  .call-to-action {
+    margin-top: 58px;
+  }
+  .call-to-action div {
+    border-radius: 58px;
+    padding: 27px 72px;
+    padding-bottom: 33px;
+  }
+  .call-to-action div span {
+    font-size:0.75rem;
+    letter-spacing: 0.15rem;
+    line-height: 0.75rem;
+  }
+  .logoLockUp {
+    flex-direction: row-reverse;
+    align-items: center;
+    padding: 0px 87px;
+    font-size: calc(0.68rem * (var(--logo-lockup-size)/100));
+    line-height: calc(0.68rem * (var(--logo-lockup-size)/100));
+    height: 160px;
+    padding-bottom: 21px;
   }
 }
