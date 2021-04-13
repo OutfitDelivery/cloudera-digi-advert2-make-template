@@ -28,9 +28,14 @@ function App({
     }
 
     //Checks to see if text has content and adds breaks if [break] exists
-    function conditionalTextCheck(text, classList){
+    function conditionalTextCheck(text, classList, optionalContent){
       classList += " text-el";
-      return <div className={classList}>{text}</div>;
+      if(optionalContent !== null && optionalContent.toString().toLowerCase() !== "null") {
+        return <div className={classList}>{text}</div>;
+      }
+      else {
+        return "";
+      }
     }
 
     function maxHeight(el){
@@ -50,12 +55,14 @@ function App({
             <div className="placeholder" style={placeholderBkg}></div>
             <div className="text-area" data-text-type={contentType} data-feature-image-exist={featureImageExist} ref={el=>maxHeight(el)}>
               <div className="headerArea">
-                {conditionalTextCheck(<div>{ formatTags(logoLockUp) }</div>, "logoLockUp")}
+                {conditionalTextCheck(<div>{ formatTags(logoLockUp) }</div>, "logoLockUp", logoLockUp)}
               </div>
               <div className="contentArea">
-                {conditionalTextCheck(<h2>{ formatTags(subheadline) }</h2>, "subheadline")}
-                {conditionalTextCheck(<h1><span>{ formatTags(headline) }</span></h1>, "headline")}
-                {conditionalTextCheck(<div><span>{callToAction}</span></div>, "call-to-action")}
+                <div className="mainContents">
+                  {conditionalTextCheck(<h2>{ formatTags(subheadline) }</h2>, "subheadline", subheadline)}
+                  {conditionalTextCheck(<h1><span>{ formatTags(headline) }</span></h1>, "headline", headline)}
+                  {conditionalTextCheck(<div><span>{callToAction}</span></div>, "call-to-action", callToAction)}
+                </div>
               </div>
             </div>
         </div>
@@ -75,17 +82,17 @@ App.propTypes = {
   callToAction: PropTypes.string,
   logoLockUp: PropTypes.string,
   logoLockUpSize: PropTypes.string,
-  featureImageExist: PropTypes.string
+  featureImageExist: PropTypes.bool
 };
 
 App.defaultProps = {
-  width: 4800,
-  height: 3600, 
+  width: 1200,
+  height: 1000, 
   contentType: "logoLockUp", 
   subheadline: "Forrester study", 
-  headline: "USE REAL-TIME[break]STREAMING DATA TO[break]MAKE CRITICAL[break]BUSINESS DECISIONS", 
+  headline: "USE REAL-TIME STREAMING[break]DATA TO MAKE CRITICAL[break]BUSINESS DECISIONS", 
   headlineSize: "100",
-  callToAction: "",
+  callToAction: "Read Now",
   logoLockUp: "On Demand",
   logoLockUpSize: "100",
   featureImageExist: true

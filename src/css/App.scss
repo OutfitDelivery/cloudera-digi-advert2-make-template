@@ -54,12 +54,12 @@ h3 {
   border: 0.2rem dashed red;
 }
 
-.placeholder{display: none; }
+.placeholder{display: block; }
 
 //Comment the code out to see all of the digi advert text elements as you build.
-.text-el{
-  visibility: hidden;
-}
+// .text-el{
+//   visibility: hidden;
+// }
 
 .text-area {
   position: relative;
@@ -105,6 +105,7 @@ h3 {
 .call-to-action div span {
   font-weight: bold;
   color: $bright-orange;
+  text-transform: uppercase;
 }
 .headerArea {
   position: relative;
@@ -112,7 +113,13 @@ h3 {
 }
 .contentArea {
   position: relative;
+  display: flex;
+  flex-direction: column;
   flex: 1 1 0;
+}
+.mainContents {
+  position: relative;
+  display: block;
 }
 .logoLockUp {
   position: relative;
@@ -129,10 +136,12 @@ h3 {
 
 [data-width="600"][data-height="315"] {
   .contentArea {
-    padding: 288px 400px 85px 97px;
+    padding: 85px 400px 102px 97px;
+    justify-content: flex-end;
   }
   [data-feature-image-exist="true"] .contentArea {
     padding: 85px 400px 85px 97px;
+    justify-content: center;
   }
   .subheadline h2 {
     font-size:1.43rem;
@@ -318,5 +327,85 @@ h3 {
     line-height: calc(2.5rem * (var(--logo-lockup-size)/100));
     height: 361px;
     padding-bottom: 40px;
+  }
+}
+
+[data-width="1024"][data-height="512"] {
+  .text-area {
+    justify-content: space-between;
+  }
+  .contentArea {
+    padding: 335px 1560px 85px 168px;
+  }
+  .subheadline h2 {
+    font-size: 2.55rem;
+    letter-spacing: 0.065rem;
+    color: $white;
+  }
+  .headline {
+    margin-top: 49px;
+  }
+  .headline h1 {
+    font-size: calc(2.85rem * (var(--headline-size)/100));
+    line-height: calc(2.98rem * (var(--headline-size)/100));
+    font-weight: bold;
+    letter-spacing: calc(0.16rem * (var(--headline-size)/100));
+    color: $white;
+  }
+  .call-to-action {
+    margin-top: 82px;
+  }
+  .call-to-action div {
+    border-radius: 58px;
+    padding: 27px 72px;
+    padding-bottom: 33px;
+  }
+  .call-to-action div span {
+    font-size:0.75rem;
+    letter-spacing: 0.15rem;
+    line-height: 0.75rem;
+  }
+  .logoLockUp {
+    flex-direction: row-reverse;
+    padding: 0px 173px;
+    font-size: calc(2.5rem * (var(--logo-lockup-size)/100));
+    line-height: calc(2.5rem * (var(--logo-lockup-size)/100));
+    height: 361px;
+    padding-bottom: 40px;
+  }
+}
+
+[data-width="1080"][data-height="1080"] {
+  .headerArea {
+    display: none;
+  }
+  [data-feature-image-exist="false"] {
+    justify-content: space-between;
+  }
+  [data-feature-image-exist="false"] .contentArea {
+    padding: 85px 1300px 143px 168px;
+    justify-content: flex-end;
+  }
+  [data-feature-image-exist="true"] .contentArea {
+    padding: 85px 1300px 143px 168px;
+    justify-content: center;
+  }
+  .subheadline h2 {
+    font-size: 2.95rem;
+    letter-spacing: 0.005rem;
+    color: $white;
+  }
+  .headline {
+    margin-top: 56px;
+  }
+  .headline h1 {
+    font-size: calc(3.4rem * (var(--headline-size)/100));
+    line-height: calc(3.6rem * (var(--headline-size)/100));
+    font-weight: bold;
+    letter-spacing: calc(0.19rem * (var(--headline-size)/100));
+    color: $white;
+  }
+  .call-to-action {
+    display: none;
   }
 }
