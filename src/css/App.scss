@@ -54,12 +54,12 @@ h3 {
   border: 0.2rem dashed red;
 }
 
-.placeholder{display: block; }
+.placeholder{ display: none; }
 
 //Comment the code out to see all of the digi advert text elements as you build.
-// .text-el{
-//   visibility: hidden;
-// }
+.text-el{
+  visibility: hidden;
+}
 
 .text-area {
   position: relative;
@@ -477,15 +477,15 @@ h3 {
 
 [data-width="640"][data-height="480"] {
   .contentArea {
-    padding: 85px 400px 102px 97px;
+    padding: 85px 400px 114px 106px;
     justify-content: flex-end;
   }
   [data-feature-image-exist="true"] .contentArea {
-    padding: 85px 400px 85px 97px;
+    padding: 85px 400px 114px 106px;
     justify-content: center;
   }
   .subheadline h2 {
-    font-size:1.43rem;
+    font-size: 1.49rem;
     letter-spacing: 0.038rem;
     color: $white;
   }
@@ -493,14 +493,14 @@ h3 {
     margin-top: 27px;
   }
   .headline h1 {
-    font-size: calc(1.8rem * (var(--headline-size)/100));
-    line-height: calc(1.88rem * (var(--headline-size)/100));
+    font-size: calc(1.66rem * (var(--headline-size)/100));
+    line-height: calc(1.75rem * (var(--headline-size)/100));
     font-weight: bold;
     letter-spacing: calc(0.095rem * (var(--headline-size)/100));
     color: $white;
   }
   .call-to-action {
-    margin-top: 82px;
+    margin-top: 74px;
   }
   .call-to-action div {
     border-radius: 58px;
@@ -521,5 +521,124 @@ h3 {
     min-height: 201px;
     max-height: 201px;
     padding-bottom: 18px;
+  }
+}
+
+[data-width="300"][data-height="50"] {
+  .headerArea {
+    max-width: 350px;
+  }
+  .text-area {
+    flex-direction: row;
+  }
+  .mainContents {
+    display: flex;
+    flex-direction: row;
+    flex: 1 1 0;
+  }
+  .headline {
+    width: 100%;
+    min-width: 640px;
+    max-width: 640px;
+    flex: 1 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 14px;
+  }
+  .headline h1 {
+    font-size: 0.64rem;
+    letter-spacing: 0.025rem;
+    line-height: 0.66rem;
+  }
+  .call-to-action {
+    flex: 1 1;
+    font-size: 0.5rem;
+    text-decoration: underline;
+    letter-spacing: 0.07rem;
+  }
+  .call-to-action div {
+    justify-content: center;
+    align-items: flex-start;
+    background-color: transparent;
+    flex: 1 1 0;
+    padding-left: 30px;
+    padding-bottom: 14px;
+  }
+  .call-to-action div span {
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+  }
+}
+
+[data-width="320"][data-height="50"] {
+  .headerArea {
+    max-width: 350px;
+  }
+  .text-area {
+    flex-direction: row;
+  }
+  .mainContents {
+    display: flex;
+    flex-direction: row;
+    flex: 1 1 0;
+  }
+  .headline {
+    width: 100%;
+    min-width: 710px;
+    max-width: 710px;
+    flex: 1 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 14px;
+  }
+  .headline h1 {
+    font-size: 0.68rem;
+    letter-spacing: 0.04rem;
+    line-height: 0.75rem;
+  }
+  .call-to-action {
+    flex: 1 1;
+    font-size: 0.5rem;
+    text-decoration: underline;
+    letter-spacing: 0.07rem;
+  }
+  .call-to-action div {
+    justify-content: center;
+    align-items: flex-start;
+    background-color: transparent;
+    flex: 1 1 0;
+    padding-left: 30px;
+    padding-bottom: 14px;
+  }
+  .call-to-action div span {
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+  }
+}
+
+[data-width="160"][data-height="600"] {
+  .logoLockUp {
+    min-height: 273px;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 40px;
+    font-size: 1.3rem;
+    padding-right: 14px;
+  }
+  .contentArea {
+    padding: 54px;
+  }
+  .subheadline h2 {
+    color: $white;
+    font-size: 1.13rem;
+    letter-spacing: 0.025rem;
+  }
+  .headline h1 {
+    font-family: "Neue Plak Text";
+    font-weight: bold;
   }
 }

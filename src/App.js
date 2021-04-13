@@ -6,7 +6,7 @@ function App({
   width, height, contentType, subheadline, headline, headlineSize, callToAction, logoLockUp, logoLockUpSize, featureImageExist}) {
     
     const placeholderBkg = {
-      backgroundImage: `url(https://cdn.jsdelivr.net/gh/OutfitDelivery/cloudera-digi-advert2-make-template@master/src/assets/Placeholder/${width/4}x${height/4}.png)`,
+      backgroundImage: `url(https://raw.githubusercontent.com/OutfitDelivery/cloudera-digi-advert2-make-template/main/src/assets/Placeholder/${width/4}x${height/4}.png)`,
     };
 
     const appStyle = {
@@ -91,16 +91,16 @@ App.propTypes = {
 };
 
 App.defaultProps = {
-  width: 2560,
-  height: 1920, 
+  width: 640,
+  height: 2400, 
   contentType: "logoLockUp", 
   subheadline: "Forrester study", 
-  headline: "USE REAL-TIME[break]STREAMING DATA TO[break]MAKE CRITICAL[break]BUSINESS DECISIONS", 
+  headline: "USE[break]REAL-TIME[break]STREAMING[break]DATA TO[break]MAKE[break]CRITICAL[break]BUSINESS[break]DECISIONS", 
   headlineSize: "100",
-  callToAction: null,
+  callToAction: "Read Now",
   logoLockUp: "On Demand",
   logoLockUpSize: "100",
-  featureImageExist: true
+  featureImageExist: false
 };
 
 
