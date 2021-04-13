@@ -22,6 +22,7 @@ function App({
         var bold_regex = /\[bold\](.*?)\[bold\]/gi;
         text = text.replaceAll(bold_regex, "<strong>$1</strong>");
         text = text.replaceAll("[break]", "<br/>");
+        text += width + " + " + height;
         return {__html: text}
       }
       return <div dangerouslySetInnerHTML={ formatAll(text) }></div>;
@@ -85,10 +86,10 @@ App.defaultProps = {
   subheadline: "Forrester study", 
   headline: "USE REAL-TIME[break]STREAMING DATA TO[break]MAKE CRITICAL[break]BUSINESS DECISIONS", 
   headlineSize: "100",
-  callToAction: "READ NOW",
+  callToAction: "",
   logoLockUp: "On Demand",
   logoLockUpSize: "100",
-  featureImageExist: false
+  featureImageExist: true
 };
 
 
