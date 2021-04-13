@@ -22,7 +22,6 @@ function App({
         var bold_regex = /\[bold\](.*?)\[bold\]/gi;
         text = text.replaceAll(bold_regex, "<strong>$1</strong>");
         text = text.replaceAll("[break]", "<br/>");
-        text += `${width} + ${height}`;
         return {__html: text}
       }
       return <div dangerouslySetInnerHTML={ formatAll(text) }></div>;
@@ -35,13 +34,13 @@ function App({
     }
 
     function maxHeight(el){
-      if(!((width === 1280 && height === 200) || (width === 1200 && height === 200))){
-        let elHeight = parseInt(window.getComputedStyle(el).height) - parseInt(window.getComputedStyle(el).paddingTop) - parseInt(window.getComputedStyle(el).paddingBottom);
-        let maxheight = window.getComputedStyle(el).maxHeight;
-        if(parseInt(elHeight) >= parseInt(maxheight)){
-          el.className = "overflow text-area";
-        }
-      }
+      // if(!((width === 1280 && height === 200) || (width === 1200 && height === 200))){
+      //   let elHeight = parseInt(window.getComputedStyle(el).height) - parseInt(window.getComputedStyle(el).paddingTop) - parseInt(window.getComputedStyle(el).paddingBottom);
+      //   let maxheight = window.getComputedStyle(el).maxHeight;
+      //   if(parseInt(elHeight) >= parseInt(maxheight)){
+      //     el.className = "overflow text-area";
+      //   }
+      // }
     }
 
     var htmlStructure = (
@@ -80,8 +79,8 @@ App.propTypes = {
 };
 
 App.defaultProps = {
-  width:4800,
-  height:3600, 
+  width: 4800,
+  height: 3600, 
   contentType: "logoLockUp", 
   subheadline: "Forrester study", 
   headline: "USE REAL-TIME[break]STREAMING DATA TO[break]MAKE CRITICAL[break]BUSINESS DECISIONS", 
