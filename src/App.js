@@ -22,7 +22,7 @@ function App({
         var bold_regex = /\[bold\](.*?)\[bold\]/gi;
         text = text.replaceAll(bold_regex, "<strong>$1</strong>");
         text = text.replaceAll("[break]", "<br/>");
-        text += width + " + " + height;
+        text += `${width} + ${height}`;
         return {__html: text}
       }
       return <div dangerouslySetInnerHTML={ formatAll(text) }></div>;
