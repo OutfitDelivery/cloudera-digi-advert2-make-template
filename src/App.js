@@ -18,13 +18,18 @@ function App({
 
     const formatTags = (text) => {
       /* [break] */
-      let formatAll = (text)=>{
-        var bold_regex = /\[bold\](.*?)\[bold\]/gi;
-        text = text.replaceAll(bold_regex, "<strong>$1</strong>");
-        text = text.replaceAll("[break]", "<br/>");
-        return {__html: text}
+      if(text !== null && text.toString().toLowerCase() !== null) {
+        let formatAll = (text)=>{
+          var bold_regex = /\[bold\](.*?)\[bold\]/gi;
+          text = text.replaceAll(bold_regex, "<strong>$1</strong>");
+          text = text.replaceAll("[break]", "<br/>");
+          return {__html: text}
+        }
+        return <div dangerouslySetInnerHTML={ formatAll(text) }></div>;
       }
-      return <div dangerouslySetInnerHTML={ formatAll(text) }></div>;
+      else {
+        return "";
+      }
     }
 
     //Checks to see if text has content and adds breaks if [break] exists
@@ -86,13 +91,13 @@ App.propTypes = {
 };
 
 App.defaultProps = {
-  width: 1200,
-  height: 1000, 
+  width: 2560,
+  height: 1920, 
   contentType: "logoLockUp", 
   subheadline: "Forrester study", 
-  headline: "USE REAL-TIME STREAMING[break]DATA TO MAKE CRITICAL[break]BUSINESS DECISIONS", 
+  headline: "USE REAL-TIME[break]STREAMING DATA TO[break]MAKE CRITICAL[break]BUSINESS DECISIONS", 
   headlineSize: "100",
-  callToAction: "Read Now",
+  callToAction: null,
   logoLockUp: "On Demand",
   logoLockUpSize: "100",
   featureImageExist: true
