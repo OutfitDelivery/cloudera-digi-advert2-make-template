@@ -110,7 +110,7 @@ App.defaultProps = {
   callToAction: null,
   logoLockUp: null,
   logoLockUpSize: "100",
-  featureImageExist: false
+  featureImageExist: true
 };
 
 
