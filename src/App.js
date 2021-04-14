@@ -36,7 +36,8 @@ function App({
     function conditionalTextCheck(text, classList, optionalContent){
       classList += " text-el";
       if(optionalContent !== null && optionalContent.toString().toLowerCase() !== "null") {
-        return <div className={classList}>{text}</div>;
+        const return_element = <div className={classList} ref={el=>fixCallToAction(el)}>{text}</div>;
+        return return_element;
       }
       else {
         return "";
@@ -51,6 +52,15 @@ function App({
       //     el.className = "overflow text-area";
       //   }
       // }
+    }
+
+    function fixCallToAction(el) {
+      if(el.classList.contains("call-to-action") && width/4 === 728 && height/4 === 90) {
+        var superParentElement = el.parentNode.parentNode;
+        var thisElement = el;
+        el.remove();
+        superParentElement.appendChild(thisElement);
+      }
     }
 
     var htmlStructure = (
@@ -91,14 +101,14 @@ App.propTypes = {
 };
 
 App.defaultProps = {
-  width: 4096,
-  height: 2048, 
-  contentType: "logoLockUp", 
+  width: 540 * 4,
+  height: 200 * 4, 
+  contentType: "call-to-action", 
   subheadline: "Forrester study", 
-  headline: "USE REAL-TIME[break]STREAMING DATA TO[break]MAKE CRITICAL[break]BUSINESS DECISIONS", 
+  headline: "use real-time[break]streaming data to[break]make critical[break]business decisions", 
   headlineSize: "100",
   callToAction: null,
-  logoLockUp: "On Demand",
+  logoLockUp: null,
   logoLockUpSize: "100",
   featureImageExist: false
 };
