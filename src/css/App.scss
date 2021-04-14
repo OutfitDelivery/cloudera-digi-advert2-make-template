@@ -51,17 +51,32 @@ h3 {
 }
 
 .overflow{
-  border: 0.2rem dashed red;
+  border: 0.1rem dashed red;
+}
+.overflow::after {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  background-color: red;
+  color: $white;
+  padding: 0.15rem 0.25rem;
+  font-size: 0.5rem;
+}
+.overflow.max-height::after {
+  content: "Exceeded Max Height!";
+}
+.overflow.max-line::after {
+  content: "Exceeded Max Line!";
 }
 
 .placeholder{ 
-  display: none; 
+  display: block; 
 }
 
 //Comment the code out to see all of the digi advert text elements as you build.
-.text-el{
-  visibility: hidden;
-}
+// .text-el{
+//   visibility: hidden;
+// }
 
 .text-area {
   position: relative;
@@ -118,6 +133,7 @@ h3 {
   display: flex;
   flex-direction: column;
   flex: 1 1 0;
+  overflow: hidden;
 }
 .mainContents {
   position: relative;
@@ -312,6 +328,7 @@ h3 {
   }
   .call-to-action {
     margin-top: 82px;
+    display: none;
   }
   .call-to-action div {
     border-radius: 58px;

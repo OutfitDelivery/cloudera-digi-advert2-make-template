@@ -44,14 +44,33 @@ function App({
       }
     }
 
-    function maxHeight(el){
-      // if(!((width === 1280 && height === 200) || (width === 1200 && height === 200))){
-      //   let elHeight = parseInt(window.getComputedStyle(el).height) - parseInt(window.getComputedStyle(el).paddingTop) - parseInt(window.getComputedStyle(el).paddingBottom);
-      //   let maxheight = window.getComputedStyle(el).maxHeight;
-      //   if(parseInt(elHeight) >= parseInt(maxheight)){
-      //     el.className = "overflow text-area";
-      //   }
-      // }
+    // function maxHeight(el){
+    //   // if(!((width === 1280 && height === 200) || (width === 1200 && height === 200))){
+    //   //   let elHeight = parseInt(window.getComputedStyle(el).height) - parseInt(window.getComputedStyle(el).paddingTop) - parseInt(window.getComputedStyle(el).paddingBottom);
+    //   //   let maxheight = window.getComputedStyle(el).maxHeight;
+    //   //   if(parseInt(elHeight) >= parseInt(maxheight)){
+    //   //     el.className = "overflow text-area";
+    //   //   }
+    //   // }
+    // }
+
+    function dataMaxHeight(el) {
+      let maxHeight = parseInt(window.getComputedStyle(el).height) - parseInt(window.getComputedStyle(el).paddingTop) - parseInt(window.getComputedStyle(el).paddingBottom);
+      let subject = el.querySelector(".mainContents");
+      let subjectHeight = parseInt(window.getComputedStyle(subject).height);
+      if(subjectHeight > maxHeight) {
+        el.className += " overflow max-height";
+      }
+    }
+
+    function dataMaxLine(el) {
+      let lineHeight = parseInt(window.getComputedStyle(el).lineHeight);
+      let actualHeight = parseInt(window.getComputedStyle(el).height);
+      let maxLine = parseInt(el.getAttribute("data-max-line"));
+      let maxHeight = lineHeight * maxLine;
+      if(actualHeight > maxHeight) {
+        el.className += " overflow max-line";
+      }
     }
 
     function fixCallToAction(el) {
@@ -68,13 +87,13 @@ function App({
     <div>
       <div className="App" style={appStyle} data-width={width/4} data-height={height/4} >
             <div className="placeholder" style={placeholderBkg}></div>
-            <div className="text-area" data-text-type={contentType} data-feature-image-exist={featureImageExist} ref={el=>maxHeight(el)}>
+            <div className="text-area" data-text-type={contentType} data-feature-image-exist={featureImageExist} /* ref={el=>maxHeight(el)} */>
               <div className="headerArea">
-                {conditionalTextCheck(<div>{ formatTags(logoLockUp) }</div>, "logoLockUp", logoLockUp)}
+                {conditionalTextCheck(<div ref={el=>dataMaxLine(el)} data-max-line="1">{ formatTags(logoLockUp) }</div>, "logoLockUp", logoLockUp)}
               </div>
-              <div className="contentArea">
+              <div className="contentArea" ref={el=>dataMaxHeight(el)}>
                 <div className="mainContents">
-                  {conditionalTextCheck(<h2>{ formatTags(subheadline) }</h2>, "subheadline", subheadline)}
+                  {conditionalTextCheck(<h2 ref={el=>dataMaxLine(el)} data-max-line="2">{ formatTags(subheadline) }</h2>, "subheadline", subheadline)}
                   {conditionalTextCheck(<h1><span>{ formatTags(headline) }</span></h1>, "headline", headline)}
                   {conditionalTextCheck(<div><span>{callToAction}</span></div>, "call-to-action", callToAction)}
                 </div>
@@ -105,9 +124,9 @@ App.defaultProps = {
   height: 1080 * 4, 
   contentType: "call-to-action", 
   subheadline: "Forrester study", 
-  headline: "use real-time[break]streaming data to[break]make critical[break]business decisions", 
+  headline: "use real-time streaming data to[break]make critical business decisions", 
   headlineSize: "100",
-  callToAction: "Read Now",
+  callToAction: "Read now",
   logoLockUp: "On Demand",
   logoLockUpSize: "100",
   featureImageExist: true
