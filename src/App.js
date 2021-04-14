@@ -101,8 +101,8 @@ App.propTypes = {
 };
 
 App.defaultProps = {
-  width: 300 * 4,
-  height: 250 * 4, 
+  width: 1080 * 4,
+  height: 1080 * 4, 
   contentType: "call-to-action", 
   subheadline: "Forrester study", 
   headline: "use real-time[break]streaming data to[break]make critical[break]business decisions", 
