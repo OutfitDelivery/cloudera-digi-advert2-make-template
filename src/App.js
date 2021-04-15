@@ -120,13 +120,13 @@ App.propTypes = {
 };
 
 App.defaultProps = {
-  width: 1080 * 4,
-  height: 1080 * 4, 
+  width: 1024 * 4,
+  height: 512 * 4, 
   contentType: "call-to-action", 
-  subheadline: "Forrester study", 
-  headline: "use real-time streaming data to[break]make critical business decisions", 
+  subheadline: "Forrester study[break]max line", 
+  headline: "USE REAL-TIME[break]STREAMING DATA TO[break]MAKE CRITICAL[break]BUSINESS DECISIONS[break]max height reached", 
   headlineSize: "100",
-  callToAction: "Read now",
+  callToAction: null,
   logoLockUp: "On Demand",
   logoLockUpSize: "100",
   featureImageExist: true
