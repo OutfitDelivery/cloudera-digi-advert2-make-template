@@ -106,6 +106,8 @@ h3 {
 .headline h1 {
   font-family: "Neue Plak Extended";
   text-transform: uppercase;
+  word-wrap: break-word;
+  hyphens: auto;
 }
 .call-to-action {
   position: relative;
