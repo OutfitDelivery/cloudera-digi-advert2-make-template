@@ -127,7 +127,7 @@ App.defaultProps = {
   headline: "USE REAL-TIME[break][break]", 
   headlineSize: "100",
   callToAction: "Read Now",
-  logoLockUp: "On Demand",
+  logoLockUp: "Demand",
   logoLockUpSize: "100",
   featureImageExist: true
 };
