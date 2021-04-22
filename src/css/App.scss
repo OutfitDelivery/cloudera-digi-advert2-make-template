@@ -71,7 +71,7 @@ h3 {
 
 .placeholder{ 
   display: none; 
-  //display: block;
+  // display: block;
 }
 
 //Comment the code out to see all of the digi advert text elements as you build.
@@ -154,6 +154,10 @@ h3 {
 }
 
 [data-width="600"][data-height="315"] {
+  .headerArea {
+    display: flex;
+    flex-direction: row-reverse;
+  }
   .contentArea {
     padding: 85px 400px 102px 97px;
     justify-content: flex-end;
@@ -199,6 +203,8 @@ h3 {
     min-height: 201px;
     max-height: 201px;
     padding-bottom: 18px;
+    text-align: right;
+    max-width: 1740px;
   }
 }
 
@@ -256,6 +262,10 @@ h3 {
 }
 
 [data-width="300"][data-height="250"] {
+  .headerArea {
+    display: flex;
+    flex-direction: row-reverse;
+  }
   .contentArea {
     padding: 51px 51px 80px 84px;
     justify-content: flex-end;
@@ -297,10 +307,16 @@ h3 {
     line-height: calc(1.120625rem * (var(--logo-lockup-size)/100));
     height: 160px;
     padding-bottom: 21px;
+    text-align: right;
+    max-width: 615px;
   }
 }
 
 [data-width="1200"][data-height="900"] {
+  .headerArea {
+    display: flex;
+    flex-direction: row-reverse;
+  }
   [data-feature-image-exist="false"] {
     justify-content: space-between;
   }
@@ -348,10 +364,16 @@ h3 {
     line-height: calc(2.5rem * (var(--logo-lockup-size)/100));
     height: 361px;
     padding-bottom: 40px;
+    text-align: right;
+    max-width: 3500px;
   }
 }
 
 [data-width="1024"][data-height="512"] {
+  .headerArea {
+    display: flex;
+    flex-direction: row-reverse;
+  }
   .contentArea {
     padding: 168px 1200px 206px 168px;
     justify-content: center;
@@ -391,6 +413,8 @@ h3 {
     line-height: calc(2.5rem * (var(--logo-lockup-size)/100));
     height: 361px;
     padding-bottom: 40px;
+    text-align: right;
+    max-width: 2890px;
   }
 }
 
@@ -459,6 +483,10 @@ h3 {
 }
 
 [data-width="1200"][data-height="800"] {
+  .headerArea {
+    display: flex;
+    flex-direction: row-reverse;
+  }
   [data-feature-image-exist="false"] .contentArea {
     padding: 168px 1560px 202px 168px;
     justify-content: flex-end;
@@ -492,10 +520,16 @@ h3 {
     line-height: calc(2.5rem * (var(--logo-lockup-size)/100));
     height: 361px;
     padding-bottom: 40px;
+    text-align: right;
+    max-width: 3570px;
   }
 }
 
 [data-width="640"][data-height="480"] {
+  .headerArea {
+    display: flex;
+    flex-direction: row-reverse;
+  }
   .contentArea {
     padding: 85px 400px 114px 106px;
     justify-content: flex-end;
@@ -541,6 +575,7 @@ h3 {
     min-height: 201px;
     max-height: 201px;
     padding-bottom: 18px;
+    max-width: 1900px;
   }
 }
 
@@ -746,6 +781,10 @@ h3 {
 }
 
 [data-width="970"][data-height="250"] {
+  .headerArea {
+    display: flex;
+    flex-direction: row-reverse;
+  }
   .logoLockUp {
     flex-direction: row-reverse;
     padding: 0px 119px;
@@ -753,6 +792,8 @@ h3 {
     line-height: calc(1.25rem * (var(--logo-lockup-size)/100));
     height: 176px;
     padding-bottom: 20px;
+    max-width: 3260px;
+    text-align: right;
   }
   // .contentArea {
   //   padding: 72px 400px 61px 116px;
