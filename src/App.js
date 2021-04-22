@@ -95,7 +95,7 @@ function App({
                 <div className="mainContents">
                   {conditionalTextCheck(<h2 ref={el=>dataMaxLine(el)} data-max-line="2">{ formatTags(subheadline) }</h2>, "subheadline", subheadline)}
                   {conditionalTextCheck(<h1><span>{ formatTags(headline) }</span></h1>, "headline", headline)}
-                  {conditionalTextCheck(<div><span>{callToAction}</span></div>, "call-to-action", callToAction)}
+                  {conditionalTextCheck(<div><span ref={el=>dataMaxLine(el)} data-max-line="1">{callToAction}</span></div>, "call-to-action", callToAction)}
                 </div>
               </div>
             </div>
@@ -126,7 +126,7 @@ App.defaultProps = {
   subheadline: "Forrester study", 
   headline: "USE REAL-TIME[break][break]", 
   headlineSize: "100",
-  callToAction: null,
+  callToAction: "Read Now",
   logoLockUp: "On Demand",
   logoLockUpSize: "100",
   featureImageExist: true
