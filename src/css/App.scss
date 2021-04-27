@@ -703,12 +703,12 @@ h3 {
     height: 100%;
     overflow: hidden;
     justify-content: flex-start;
-    align-items: center;
+    align-items: flex-start;
     font-size: calc(1.3rem * (var(--logo-lockup-size)/100));
     line-height: calc(1.3rem * (var(--logo-lockup-size)/100));
     padding-right: 63px;
     padding-left: 57px;
-    text-align: center;
+    text-align: left;
     flex-direction: column;
     padding-top: 130px;
   }

@@ -117,17 +117,17 @@ App.propTypes = {
   logoLockUp: PropTypes.string,
   logoLockUpSize: PropTypes.string,
   featureImageExist: PropTypes.bool
-};
+}; 
 
 App.defaultProps = {
-  width: 300 * 4,
+  width: 160 * 4,
   height: 600 * 4, 
   contentType: "call-to-action", 
   subheadline: "Forrester study", 
   headline: "USE REAL-TIME[break]streaming data to make critical[break]business[break]decisions", 
   headlineSize: "100",
   callToAction: "Read Now",
-  logoLockUp: "On Demand",
+  logoLockUp: "On",
   logoLockUpSize: "100",
   featureImageExist: true
 };
